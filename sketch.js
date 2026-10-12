@@ -3,13 +3,14 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight); 
+  background("purple")
   console.log('p5.js version:', p5.VERSION);
   // put setup code here
   const message =
     "This is so bad that I wanna give you a 0 but I give you a 1";
   textAlign(CENTER, CENTER);
-  textSize(16);
+  textSize(25);
   text(message, width / 2, height / 2);
 }
 
