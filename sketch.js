@@ -23,37 +23,50 @@ function draw() {
   let posX = width / 2;
   let posY = height / 2;
 
-  // --- GAMBO DEL FUNGO ---
-  fill(225, 204, 164); // Beige chiaro
-  rectMode(CENTER);
-  rect(posX, posY + 85, 95, 130, 30); // Gambo con angoli arrotondati
+  // Cielo 
+  background(100, 180, 240); // azzurro 
 
-  // Macchie/sfumature sul gambo
+  // Erba 
+  rectMode(CORNER);
+  fill(65, 120, 65); // verde 
+  let altezzaPrato = posY + 100; // inizia l'erba
+  rect(0, altezzaPrato, width, height - altezzaPrato);
+
+  // ombra fungo
+  fill(35, 65, 35, 160); // verde  
+  ellipse(posX, posY + 145, 130, 30);
+
+  // gambo fungo
+  fill(225, 204, 164); // beige
+  rectMode(CENTER);
+  rect(posX, posY + 85, 95, 130, 30); // angoli arrotondati
+
+  // macchie gambo
   fill(200, 160, 105);
-  ellipse(posX + 10, posY + 50, 14, 18);
+  ellipse(posX + 10, posY + 58, 14, 18);
   ellipse(posX - 5, posY + 90, 18, 16);
   ellipse(posX + 25, posY + 105, 20, 18);
 
-  // --- CAPPELLO DEL FUNGO ---
-  fill(215, 25, 15); // Rosso vivo
+  // cappello fungo
+  fill(215, 25, 15); // rosso 
   arc(posX, posY + 40, 260, 200, PI, 0, CHORD);
 
-  // --- PALLINI BIANCHI (IA: ciclo for + blocco if) ---
+  // pallini bianchi
   fill(255);
   
-  // Array con coordinate e dimensioni relative dei pallini
+  // coordinate e dimensioni dei pallini
   let pois = [
-    { x: -50, y: -45, d: 24 },
+    
     { x: 30,  y: -35, d: 32 },
-    { x: -15, y: -25, d: 26 },
+    
     { x: -80, y: -10, d: 18 },
     { x: -35, y:   5, d: 32 },
-    { x:  20, y:  -5, d: 18 },
+    { x:  8, y:  -5, d: 18 },
     { x:  75, y: -15, d: 24 },
-    { x:  15, y:  25, d: 26 },
-    { x: -90, y:  20, d: 30 }, // incavo a sinistra
-    { x:  95, y:  15, d: 35 }, // incavo a destra
-    { x:   0, y: -65, d: 28 }  // incavo in cima
+    { x:  38, y:  15, d: 26 },
+    { x: -90, y:  20, d: 30 }, 
+    { x:  95, y:  16, d: 30 }, 
+    { x:   -30, y: -35, d: 28 }  
   ];
 
   for (let i = 0; i < pois.length; i++) {
@@ -65,3 +78,4 @@ function draw() {
     }
   }
 }
+
